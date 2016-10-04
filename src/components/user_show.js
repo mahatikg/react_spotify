@@ -4,10 +4,20 @@ import ArtistShow from './artist_show'
 
 function UserShow(props) {
 
+
+function createArtists(props) {
+
+  return props.user.mid_term["artists"].map( artist => {
+    return (<ArtistShow name={artist.name} rank={artist.rank} image={artist.image}/>)
+  })
+}
+
+
+
   return(
     <div>
       <h1>{props.user.username}</h1>
-      <ArtistShow/>
+      {createArtists(props)}
     </div>
 
   )
