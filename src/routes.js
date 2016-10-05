@@ -6,6 +6,7 @@ import UserShow from './components/user_show'
 import ArtistShow from './components/artist_show'
 
 
+
 export default (
   <Route path='/' component={App}>
    <Route path='/users' component={UserIndex} />
