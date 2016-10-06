@@ -10,8 +10,6 @@ export default function NavBar(props){
     var userscope = "&scope=user-top-read"
     var final_url = url + client_id_formated + response_type + callback +userscope
 
-
-let dummy_data = fetch(final_url).then( response => response).then( response => { return fetch('http://localhost:5050/token').then(response => response).then(response => response)})
 }
   return (
     <nav className='navbar navbar-inverse'>
