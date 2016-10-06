@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import ArtistShow from './artist_show'
-import {Bar} from 'react-chartjs-2';
+// import {Pie} from 'react-chartjs-2';
 import BarComponent1 from './artist_top10_chart'
+import PieComponent1 from './user_genre_pie'
 
 function UserShow(props) {
 
@@ -25,21 +26,6 @@ var art_pop = props.user.mid_term["artists"].slice(0, 10).map( artist => { retur
   ]
 };
 
-var options = {maintainAspectRatio: false}
-
-  var BarComponent = React.createClass({
-  displayName: 'BarExample',
-
-  render() {
-    return (
-      <div> <br/> <br/> <h2>Top 10 Artists</h2>
-        <div>
-          <Bar data={data} width={100} height={600} options={options}/>
-        </div>
-      </div>
-    );
-  }
-});
 
 
 
@@ -59,6 +45,7 @@ function createArtists(props) {
       <h1>{props.user.username}</h1>
       {createArtists(props)}
       <BarComponent1 user={props.user}/>
+      <PieComponent1 user={props.user}/>
 
     </div>
 
