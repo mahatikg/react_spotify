@@ -42,10 +42,10 @@ function createArtists(props) {
 
   return(
     <div>
+      <PieComponent1 user={props.user}/>
       <h1>{props.user.username}</h1>
       {createArtists(props)}
       <BarComponent1 user={props.user}/>
-      <PieComponent1 user={props.user}/>
 
     </div>
 

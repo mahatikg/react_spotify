@@ -17,7 +17,7 @@ class BarComponent extends React.Component {
     labels: this.labels,
     datasets: [
       {
-        label: 'Top 10 Artists Popularity',
+        label: 'Spotify Popularity ratings of your Top 10 Artists',
         backgroundColor: 'rgba(255,99,132,0.2)',
         borderColor: 'rgba(255,99,132,1)',
         borderWidth: 1,
