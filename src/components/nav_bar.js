@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function NavBar(props){
+export default class NavBar extends React.Component {
+
+  constructor(props) {
+      super(props)
+      this.findToken = this.findToken.bind(this)
+      this.getToken = this.getToken.bind(this)
+  }
 
 //   function authenticate(){
 //     var url= "https://accounts.spotify.com/authorize/"
@@ -14,40 +20,47 @@ export default function NavBar(props){
 // let dummy_data = fetch(final_url).then( response => response).then( response => { return fetch('http://localhost:5050/token').then(response => response).then(response => response)})
 // }
 
-  function getToken(){
+   getToken(){
     return fetch('http://localhost:5050/token').then(response => {
       return response.json();
     }).then(tokenPayload => {
+      console.log("gettoken", tokenPayload);
       return tokenPayload
     })
     // return fetch('/token').then(response => {
     //   return response.json() }).then(token => {
     //     debugger
-    //      return token          
+    //      return token
     //     })
     // }
   }
-  
 
- function findToken(){
-  getToken().then(tokenPayload => {
-    debugger;
+
+  findToken(){
+    console.log("inside findtoken", this);
+  this.getToken().then(tokenPayload => {
     if (tokenPayload.error) {
-      findToken();
+      console.log(tokenPayload.error);
+      this.findToken();
     } else {
-      debugger;
-      sessionStorage.setItem('jwt', tokenPayload.jwt)
+      console.log("setitem", tokenPayload);
+      window.localStorage.setItem('jwt', tokenPayload.token)
     }
   })
  }
 
+render() {
   return (
     <nav className='navbar navbar-inverse'>
       <div className='navbar-header'>
-        <a className='navbar-brand' href={props.url}>{props.title}</a>
-        <a href="http://localhost:5050/get-auth-code">Login with Spotify!!!</a>
+        <button onClick={this.findToken}>find token</button>
+        <a className='navbar-brand' href={this.props.url}>{this.props.title}</a>
+        <a href="https://accounts.spotify.com/authorize/?client_id=031ed6ea90bd4727b184cd84219dd697&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5050%2Fcallback%2F&scope=user-top-read">Login with Spotify!!!</a>
       </div>
     </nav>
   )
+
+}
+
 
 }
