@@ -4,6 +4,9 @@ import ArtistShow from './artist_show'
 // import {Pie} from 'react-chartjs-2';
 import BarComponent1 from './artist_top10_chart'
 import PieComponent1 from './user_genre_pie'
+import SpotifyTimelineComponent from './static_timeline'
+import Timeline from 'react-image-timeline';
+
 
 function UserShow(props) {
 
@@ -42,10 +45,13 @@ function createArtists(props) {
 
   return(
     <div>
+        <SpotifyTimelineComponent user={props.user}/>
       <PieComponent1 user={props.user}/>
       <h1>{props.user.username}</h1>
       {createArtists(props)}
       <BarComponent1 user={props.user}/>
+
+
 
     </div>
 

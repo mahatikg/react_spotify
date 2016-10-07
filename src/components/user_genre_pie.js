@@ -23,22 +23,28 @@ class PieComponent extends React.Component {
                       {
                         data: this.dataset,
                         backgroundColor: [
+
+                                          "#FF4633",
+                                          "#55FF33",
+                                          "#33FFBB",
+                                          "#C5CBC9",
                                           "#FF6384",
                                           "#36A2EB",
                                           "#FFCE56",
                                           "#FF9900",
                                           "#330033"
-
                                         ],
                         hoverBackgroundColor: [
+
+                                                "#FF4633",
+                                                "#55FF33",
+                                                "#33FFBB",
+                                                "#C5CBC9",
                                                 "#FF6384",
                                                 "#36A2EB",
                                                 "#FFCE56",
                                                 "#FF9900",
                                                 "#330033"
-
-
-
                                               ]
                       }
                       ]
