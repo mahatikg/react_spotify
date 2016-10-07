@@ -13,11 +13,15 @@ class createArtists extends React.Component {
     super(props);
   }
 
-
-// in the middle of refactoring to make a class 
+getArtists() {
   return props.user.mid_term["artists"].map( artist => {
     return (<ArtistShow name={artist.name} rank={artist.rank} image={artist.image}/>)
   })
+
+
+}
+
+// in the middle of refactoring to make a class
 
   render() {
 
