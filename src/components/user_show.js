@@ -20,8 +20,9 @@ function UserShow(props) {
       <BarComponent data={props.user.short_term} term={"Short Term"}/>
       <BarComponent data={props.user.mid_term} term={"Mid Term"}/>
       <BarComponent data={props.user.long_term} term={"Long Term"}/>
-      <PieComponent user={props.user}/>
-    </div>
+      <PieComponent data={props.user.short_term} term={"Short Term"}/>
+      <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
+      <PieComponent data={props.user.long_term} term={"Long Term"}/>    </div>
   )
 }
 
