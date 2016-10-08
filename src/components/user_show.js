@@ -16,7 +16,7 @@ function UserShow(props) {
         <SpotifyTimelineComponent user={props.user}/>
       <h1>{props.user.username}</h1>
       <ArtistCoverFlow user={props.user}/>
-     {props.user.mid_term.songs.length > 0 ? <div><h3> Top Songs</h3><SongCoverFlow user={props.user} /></div> : "You have no songs"}
+     {props.user.mid_term.tracks.length > 0 ? <div><h3> Top Songs</h3><SongCoverFlow user={props.user} /></div> : "You have no songs"}
       <BarComponent user={props.user}/>
       <PieComponent user={props.user}/>
     </div>

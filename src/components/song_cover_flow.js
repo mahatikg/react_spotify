@@ -4,7 +4,7 @@ import Coverflow from 'react-coverflow';
 export default function SongCoverFlow(props) {
 
 
-var images = props.user.mid_term.songs.map( song =>  {return (
+var images = props.user.mid_term.tracks.map( song =>  {return (
   <div style={{backgroundColor: 'gray', color: 'linen'}}>
   <div className="row" >{song.name}</div>
   <img height='100%' width='100%' src={`${song.image}`}/>
