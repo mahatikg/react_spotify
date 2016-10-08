@@ -6,10 +6,11 @@ import {Bar} from 'react-chartjs-2';
 class BarComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.labels = props.user.mid_term["artists"].slice(0, 10).map( artist => { return (artist.name)})
-    this.art_pop = props.user.mid_term["artists"].slice(0, 10).map( artist => { return parseInt(artist.popularity)} )
+    this.labels = props.data["artists"].slice(0, 10).map( artist => { return (artist.name)})
+    this.art_pop = props.data["artists"].slice(0, 10).map( artist => { return parseInt(artist.popularity)} )
     this.options = {maintainAspectRatio: false}
     this.data = this.data.bind(this)
+    this.term = props.term
   }
 
   data() {
@@ -31,7 +32,7 @@ class BarComponent extends React.Component {
 
 
 render() {
-  return ( <div> <br/> <br/> <h2>Top 10 Artists</h2>
+  return ( <div> <br/> <br/> <h2>Top 10 {this.term} Artists</h2>
     <div>
       <Bar data={this.data()} width={100} height={600} options={this.options}/>
     </div>

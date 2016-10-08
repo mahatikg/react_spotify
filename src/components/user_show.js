@@ -17,7 +17,9 @@ function UserShow(props) {
       <h1>{props.user.username}</h1>
       <ArtistCoverFlow user={props.user}/>
      {props.user.mid_term.tracks.length > 0 ? <div><h3> Top Songs</h3><SongCoverFlow user={props.user} /></div> : "You have no songs"}
-      <BarComponent user={props.user}/>
+      <BarComponent data={props.user.short_term} term={"Short Term"}/>
+      <BarComponent data={props.user.mid_term} term={"Mid Term"}/>
+      <BarComponent data={props.user.long_term} term={"Long Term"}/>
       <PieComponent user={props.user}/>
     </div>
   )
