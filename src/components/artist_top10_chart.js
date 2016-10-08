@@ -10,7 +10,6 @@ class BarComponent extends React.Component {
     this.art_pop = props.user.mid_term["artists"].slice(0, 10).map( artist => { return parseInt(artist.popularity)} )
     this.options = {maintainAspectRatio: false}
     this.data = this.data.bind(this)
-    debugger;
   }
 
   data() {

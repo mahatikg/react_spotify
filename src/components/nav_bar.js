@@ -8,6 +8,7 @@ export default class NavBar extends React.Component {
       this.getToken = this.getToken.bind(this)
   }
 
+
 //   function authenticate(){
 //     var url= "https://accounts.spotify.com/authorize/"
 //     var client_id_formated = "031ed6ea90bd4727b184cd84219dd697"

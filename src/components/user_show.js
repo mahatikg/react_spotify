@@ -2,67 +2,53 @@ import React from 'react'
 import {connect} from 'react-redux'
 import ArtistShow from './artist_show'
 import {Bar} from 'react-chartjs-2';
-import BarComponent1 from './artist_top10_chart'
+import BarComponent from './artist_top10_chart'
+import ArtistCoverFlow from './artist_cover_flow'
+import SongCoverFlow from './song_cover_flow'
 
 function UserShow(props) {
 
-var labels = props.user.mid_term["artists"].slice(0, 10).map( artist => { return (artist.name)})
-
-var art_pop = props.user.mid_term["artists"].slice(0, 10).map( artist => { return parseInt(artist.popularity)} )
-
-  const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: 'Top 10 Artists Popularity',
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: art_pop,
-    }
-  ]
-};
-
-var options = {maintainAspectRatio: false}
-
-  var BarComponent = React.createClass({
-  displayName: 'BarExample',
-
-  render() {
-    return (
-      <div> <br/> <br/> <h2>Top 10 Artists</h2>
-        <div>
-          <Bar data={data} width={100} height={600} options={options}/>
-        </div>
-      </div>
-    );
+class createArtists extends React.Component {
+  constructor(props) {
+    super(props);
   }
-});
 
-
-
-
-
-
-
-
-function createArtists(props) {
+getArtists() {
   return props.user.mid_term["artists"].map( artist => {
     return (<ArtistShow name={artist.name} rank={artist.rank} image={artist.image}/>)
   })
+
+
 }
 
-  return(
-    <div>
-      <h1>{props.user.username}</h1>
-      {createArtists(props)}
-      <BarComponent1 user={props.user}/>
+// in the middle of refactoring to make a class
 
-    </div>
+  render() {
 
-  )
+    return(
+      <div>
+        <h1>{props.user.username}</h1>
+        <div>
+          <h3>Top Artists</h3>
+          <ArtistCoverFlow user={props.user}/>
+        </div>
+
+        <br/>
+        <br/>
+        {props.user.mid_term.songs.length > 0 ? <div><h3> Top Songs</h3><SongCoverFlow user={props.user} /></div> : "You have no songs"}
+
+
+        {createArtists(props)}
+        <BarComponent user={props.user}/>
+
+      </div>
+
+    )
+  }
+
+}
+
+
 
 }
 
