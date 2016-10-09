@@ -10,6 +10,7 @@ import SpotifyTimelineComponent from './static_timeline'
 import Timeline from 'react-image-timeline';
 
 function UserShow(props) {
+  debugger
 
     if (props.user.username == '') {
       return <div> loading.....</div>
@@ -38,9 +39,9 @@ function UserShow(props) {
 function mapStateToProps(state, ownProps) {
   if (state.users.length > 0) {
     const user = state.users.find((user) => {return user.id == ownProps.params.id})
-    return {user: user}
+    return {user: user, users: state.users}
   } else {
-    return {user: {username: '', short_term: [], mid_term: [], long_term: []}}
+    return {user: {username: ''}}
   }
 
 
