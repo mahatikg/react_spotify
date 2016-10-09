@@ -11,6 +11,7 @@ import Timeline from 'react-image-timeline';
 import UserCompare from './user_compare'
 
 function UserShow(props) {
+  debugger
 
     if (props.user.username == '') {
       return <div> loading.....</div>
