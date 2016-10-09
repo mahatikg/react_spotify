@@ -14,15 +14,15 @@ var images = props.data.tracks.map( song =>  {return (
 })
 
 return(
-  <div> 
+  <div>
   <h3>{props.term} Songs</h3>
   <Coverflow
       width={960}
       height={400}
       displayQuantityOfSide={2}
+      startPosition={0}
       navigation={true}
       enableHeading={false}
-      ba
       >
 
       {images}

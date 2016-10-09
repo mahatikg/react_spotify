@@ -14,16 +14,15 @@ var images = props.data.artists.map( artist =>  {return (
 })
 
 return(
-  <div>  
+  <div>
   <h3>{props.term} Artists</h3>
   <Coverflow
       width={960}
       height={400}
+      startPosition={0}
       displayQuantityOfSide={2}
       navigation={true}
-      enableHeading={false}
-      ba
-      >
+      enableHeading={false}>
 
       {images}
 

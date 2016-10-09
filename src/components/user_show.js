@@ -11,28 +11,40 @@ import Timeline from 'react-image-timeline';
 
 function UserShow(props) {
 
-  return(
-    <div>
-        <SpotifyTimelineComponent user={props.user}/>
-      <h1>{props.user.username}</h1>
-      <ArtistCoverFlow data={props.user.short_term} term={"Short Term"}/>
-      <ArtistCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
-      <ArtistCoverFlow data={props.user.long_term} term={"Long Term"}/>
-      <SongCoverFlow data={props.user.short_term} term={"Short Term"}/>
-      <SongCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
-      <SongCoverFlow data={props.user.long_term} term={"Long Term"}/>
-      <BarComponent data={props.user.short_term} term={"Short Term"}/>
-      <BarComponent data={props.user.mid_term} term={"Mid Term"}/>
-      <BarComponent data={props.user.long_term} term={"Long Term"}/>
-      <PieComponent data={props.user.short_term} term={"Short Term"}/>
-      <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
-      <PieComponent data={props.user.long_term} term={"Long Term"}/>    </div>
-  )
+    if (props.user.username == '') {
+      return <div> loading.....</div>
+    } else {
+      return(
+        <div>
+          <h1>{props.user.username}</h1>
+          <SpotifyTimelineComponent user={props.user}/>
+          <ArtistCoverFlow data={props.user.short_term} term={"Short Term"}/>
+          <ArtistCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
+          <ArtistCoverFlow data={props.user.long_term} term={"Long Term"}/>
+          <SongCoverFlow data={props.user.short_term} term={"Short Term"}/>
+          <SongCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
+          <SongCoverFlow data={props.user.long_term} term={"Long Term"}/>
+          <BarComponent data={props.user.short_term} term={"Short Term"}/>
+          <BarComponent data={props.user.mid_term} term={"Mid Term"}/>
+          <BarComponent data={props.user.long_term} term={"Long Term"}/>
+          <PieComponent data={props.user.short_term} term={"Short Term"}/>
+          <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
+          <PieComponent data={props.user.long_term} term={"Long Term"}/>
+        </div>
+      )
+    }
 }
 
 function mapStateToProps(state, ownProps) {
-const user = state.users.find((user) => {return user.id == ownProps.params.id})
-return {user: user}
+  if (state.users.length > 0) {
+    const user = state.users.find((user) => {return user.id == ownProps.params.id})
+    return {user: user}
+  } else {
+    return {user: {username: '', short_term: [], mid_term: [], long_term: []}}
+  }
+
+
+
 }
 
 const componentCreator = connect(mapStateToProps)
