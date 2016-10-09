@@ -8,6 +8,7 @@ import ArtistCoverFlow from './artist_cover_flow'
 import SongCoverFlow from './song_cover_flow'
 import SpotifyTimelineComponent from './static_timeline'
 import Timeline from 'react-image-timeline';
+import UserCompare from './user_compare'
 
 function UserShow(props) {
 
@@ -30,6 +31,7 @@ function UserShow(props) {
           <PieComponent data={props.user.short_term} term={"Short Term"}/>
           <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
           <PieComponent data={props.user.long_term} term={"Long Term"}/>
+          
         </div>
       )
     }
@@ -38,13 +40,10 @@ function UserShow(props) {
 function mapStateToProps(state, ownProps) {
   if (state.users.length > 0) {
     const user = state.users.find((user) => {return user.id == ownProps.params.id})
-    return {user: user}
+    return {user: user, users: state.users}
   } else {
-    return {user: {username: '', short_term: [], mid_term: [], long_term: []}}
+    return {user: {username: ''}}
   }
-
-
-
 }
 
 const componentCreator = connect(mapStateToProps)
