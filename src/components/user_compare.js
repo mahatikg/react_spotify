@@ -42,7 +42,6 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-  debugger
   return{
     comparedUsers: state.comparedUsers
   }
