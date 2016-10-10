@@ -1,9 +1,9 @@
 import React from 'react'
 import Coverflow from 'react-coverflow';
 
-export default function ArtistCoverFlow(props) {
+export default function MutualArtistCoverFlow(props) {
 
-var images = props.data.artists.map( artist =>  {return (
+var images = props.data.map( artist =>  {return (
   <div style={{backgroundColor: 'gray', color: 'linen'}}>
   <div className="row" >{artist.name}</div>
   <img height='100%' width='100%' src={`${artist.image}`}/>

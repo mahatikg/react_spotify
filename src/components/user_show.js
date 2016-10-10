@@ -11,7 +11,6 @@ import Timeline from 'react-image-timeline';
 import UserCompare from './user_compare'
 
 function UserShow(props) {
-  debugger
 
     if (props.user.username == '') {
       return <div> loading.....</div>
@@ -19,6 +18,7 @@ function UserShow(props) {
       return(
         <div>
           <h1>{props.user.username}</h1>
+          <UserCompare users={props.users} initiatorid={props.ownProps.params.id}/>
           <SpotifyTimelineComponent user={props.user}/>
           <ArtistCoverFlow data={props.user.short_term} term={"Short Term"}/>
           <ArtistCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
@@ -32,7 +32,8 @@ function UserShow(props) {
           <PieComponent data={props.user.short_term} term={"Short Term"}/>
           <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
           <PieComponent data={props.user.long_term} term={"Long Term"}/>
-          
+
+
         </div>
       )
     }
@@ -41,7 +42,7 @@ function UserShow(props) {
 function mapStateToProps(state, ownProps) {
   if (state.users.length > 0) {
     const user = state.users.find((user) => {return user.id == ownProps.params.id})
-    return {user: user, users: state.users}
+    return {user: user, users: state.users, ownProps: ownProps}
   } else {
     return {user: {username: ''}}
   }
