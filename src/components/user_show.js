@@ -34,7 +34,7 @@ class UserShow extends React.Component {
         <ArtistCoverFlow data={this.props.user} />
       )
     } if(this.state.selectedChart=="SongCoverFlow"){
-      
+
       return(
           <SongCoverFlow data={this.props.user}/>
       )
@@ -45,17 +45,13 @@ class UserShow extends React.Component {
     } if (this.state.selectedChart=="PieChart"){
       return(
         <div>
-          <PieComponent data={this.props.user.short_term} term={"1 Month Ago"}/>
-          <PieComponent data={this.props.user.mid_term} term={"4 Months Ago"}/>
-          <PieComponent data={this.props.user.long_term} term={"Way Back When"}/>
+          <PieComponent data={this.props.user} />
         </div>
       )
     } if (this.state.selectedChart=="BarComponent"){
       return(
         <div>
-          <BarComponent data={this.props.user.short_term} term={"1 Month Ago"}/>
-          <BarComponent data={this.props.user.mid_term} term={"4 Months Ago"}/>
-          <BarComponent data={this.props.user.long_term} term={"Way Back When"}/>
+          <BarComponent data={this.props.user}/>
         </div>
       )
     }
