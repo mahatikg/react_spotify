@@ -54,7 +54,14 @@ class UserShow extends React.Component {
           <BarComponent data={this.props.user}/>
         </div>
       )
+    } if (this.state.selectedChart=="CompareUsersComponent"){
+      return(
+        <div>
+          <UserCompare users={this.props.users} initiatorid={this.props.ownProps.params.id}/>
+        </div>
+      )
     }
+
   }
 
     render(){
@@ -64,14 +71,17 @@ class UserShow extends React.Component {
         return(
           <div>
             <h1>{this.props.user.username} Spotify Stats</h1>
-            <div className="btn-group-vertical">
+            <div className="btn-group-vertical" >
               <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
               <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
               <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
               <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a>
-            </div>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a><br></br>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("CompareUsersComponent")}>Compare Users</a><br></br>
+          </div>
+          <div className= "componentRender">
             {this.chooseComponent()}
+          </div>
 
          </div>
         )
