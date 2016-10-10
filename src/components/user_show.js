@@ -10,41 +10,86 @@ import SpotifyTimelineComponent from './static_timeline'
 import Timeline from 'react-image-timeline';
 import UserCompare from './user_compare'
 
-function UserShow(props) {
 
-    if (props.user.username == '') {
-      return <div> loading.....</div>
-    } else {
+
+class UserShow extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state={
+      selectedChart: "PieChart"
+    }
+  this.chooseComponent=this.chooseComponent.bind(this)
+  }
+
+  changeComponentOnClick(term){
+    this.setState({
+      selectedChart: term
+    })
+  }
+
+  chooseComponent(){
+    if (this.state.selectedChart=="ArtistCoverFlow"){
+      return(
+        <ArtistCoverFlow data={this.props.user} />
+      )
+    } if(this.state.selectedChart=="SongCoverFlow"){
+      
+      return(
+          <SongCoverFlow data={this.props.user}/>
+      )
+    } if (this.state.selectedChart=="Timeline"){
+      return(
+        <SpotifyTimelineComponent user={this.props.user}/>
+      )
+    } if (this.state.selectedChart=="PieChart"){
       return(
         <div>
-          <h1>{props.user.username}</h1>
-          <UserCompare users={props.users} initiatorid={props.ownProps.params.id}/>
-          <SpotifyTimelineComponent user={props.user}/>
-          <ArtistCoverFlow data={props.user.short_term} term={"Short Term"}/>
-          <ArtistCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
-          <ArtistCoverFlow data={props.user.long_term} term={"Long Term"}/>
-          <SongCoverFlow data={props.user.short_term} term={"Short Term"}/>
-          <SongCoverFlow data={props.user.mid_term} term={"Mid Term"}/>
-          <SongCoverFlow data={props.user.long_term} term={"Long Term"}/>
-          <BarComponent data={props.user.short_term} term={"Short Term"}/>
-          <BarComponent data={props.user.mid_term} term={"Mid Term"}/>
-          <BarComponent data={props.user.long_term} term={"Long Term"}/>
-          <PieComponent data={props.user.short_term} term={"Short Term"}/>
-          <PieComponent data={props.user.mid_term} term={"Mid Term"}/>
-          <PieComponent data={props.user.long_term} term={"Long Term"}/>
-
-
+          <PieComponent data={this.props.user.short_term} term={"1 Month Ago"}/>
+          <PieComponent data={this.props.user.mid_term} term={"4 Months Ago"}/>
+          <PieComponent data={this.props.user.long_term} term={"Way Back When"}/>
+        </div>
+      )
+    } if (this.state.selectedChart=="BarComponent"){
+      return(
+        <div>
+          <BarComponent data={this.props.user.short_term} term={"1 Month Ago"}/>
+          <BarComponent data={this.props.user.mid_term} term={"4 Months Ago"}/>
+          <BarComponent data={this.props.user.long_term} term={"Way Back When"}/>
         </div>
       )
     }
+  }
+
+    render(){
+      if (this.props.user.username == '') {
+        return <div> loading.....</div>
+      } else {
+        return(
+          <div>
+            <h1>{this.props.user.username} Spotify Stats</h1>
+            <div className="btn-group-vertical">
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>
+              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a>
+            </div>
+            {this.chooseComponent()}
+
+         </div>
+        )
+    }
+  }
 }
+
 
 function mapStateToProps(state, ownProps) {
   if (state.users.length > 0) {
     const user = state.users.find((user) => {return user.id == ownProps.params.id})
     return {user: user, users: state.users, ownProps: ownProps}
   } else {
-    return {user: {username: ''}}
+    return {user: {username: '', mid_term: {artists: []}}}
   }
 }
 
