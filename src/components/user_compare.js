@@ -22,7 +22,6 @@ class UserCompare extends React.Component{
       return(
         <div>
          <MutualArtistCoverFlow data={this.props.comparedUsers}/>
-          {this.props.comparedUsers.map(artist=> artist.name + " ")}
         </div>
       )
     } else {

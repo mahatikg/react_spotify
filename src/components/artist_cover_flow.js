@@ -64,8 +64,6 @@ class ArtistCoverFlow extends React.Component {
 
 return(
   <div>
-  <h3>Top Artists</h3>
-
     <div className="btn-group btn-group-justified" role="group" aria-label="...">
         <div className="btn-group" role="group">
           <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>As Long Ago As You Can Remember</button>
@@ -77,7 +75,8 @@ return(
           <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Four Weeks Ago</button>
         <br/></div>
     </div>
-
+  <h3>Top Artists</h3>
+  <br></br>
   <Coverflow
       width={960}
       height={400}
