@@ -10,7 +10,11 @@ created to better understand React/Redux and oauth flow. This app relies on a Ra
 
 2. Once you have the rails side running, clone this repo and run ``` npm install ```
 
+3. run ``` npm install --save circular-json ```
+
 3. Run ``` npm start ``` and this should open the broswer with the app. 
+
+
 
 Other Concerns: 
 - make sure that the Rails server is not running on the same port as the react app
