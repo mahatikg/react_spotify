@@ -9,7 +9,7 @@ export default class NavBar extends React.Component {
   }
 
    getToken(){
-    return fetch('http://localhost:5050/token').then(response => {
+    return fetch('http://rocky-dusk-25774.herokuapp.com/token').then(response => {
       return response.json();
     }).then(tokenPayload => {
       console.log("gettoken", tokenPayload);
