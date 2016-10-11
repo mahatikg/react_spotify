@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.home {
+    background-image: url('http://pages.stolaf.edu/cis-lbeck/files/2014/03/soundWaves2.jpg');
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     top: 0;
+     background-repeat: no-repeat;
+     background-size: 100% 100%
+ }
