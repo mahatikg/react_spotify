@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {Pie} from 'react-chartjs-2';
-import Timeline from 'react-image-timeline';
-require('react-image-timeline/dist/timeline.css');
+import Timeline from './timeline/timeline';
+require('./timeline/timeline.css');
 
 class SpotifyTimelineComponent extends React.Component {
   constructor(props) {
