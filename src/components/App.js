@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './nav_bar';
 import {Link} from 'react-router';
+import {spotify_auth} from '../variables'
 
 class App extends Component {
   render() {
+    console.log(spotify_auth);
     return (
       <div className="App">
         <div className="home">
 
               <h1>STASTE</h1>
-                <h4><a href="https://accounts.spotify.com/authorize/?client_id=031ed6ea90bd4727b184cd84219dd697&response_type=code&redirect_uri=https%3A%2F%2Frocky-dusk-25774.herokuapp.com%2Fcallback%2F&scope=user-top-read">Login with Spotify!</a></h4>
+                <h4><a href={spotify_auth}>Login with Spotify!</a></h4>
                 {this.props.children}
         </div>
       </div>

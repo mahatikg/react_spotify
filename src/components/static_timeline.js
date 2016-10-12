@@ -7,7 +7,6 @@ require('react-image-timeline/dist/timeline.css');
 class SpotifyTimelineComponent extends React.Component {
   constructor(props) {
     super(props);
-    debugger
  this.events = [
    {
            "date": "Top Artist - 1 Month ",

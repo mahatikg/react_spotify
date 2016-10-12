@@ -20,8 +20,6 @@ class SongCoverFlow extends React.Component{
   }
 
   displayCoverFlow(){
-    debugger
-
     if (this.state.term=="short_term"){
 
       return (

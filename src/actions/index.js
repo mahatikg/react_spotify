@@ -1,26 +1,18 @@
-
-// ACTION TO GET THE ORIGINAL SIGNIN INTO SPOTIFY TO GET A 'CODE'
-
-
-
-
-
-
-
-/// API ACTIONS (REQUESTS TO THE RAILS API)
-
+import {user_url, compare_url} from '../variables'
 
 export function fetchUsers() {
 
-  const users = fetch('https://rocky-dusk-25774.herokuapp.com/users').then(response => { return response.json()}).then(userPayLoad => { return userPayLoad})
+  const users = fetch(user_url).then(response => { return response.json()}).then(userPayLoad => { return userPayLoad})
   return { type: 'FETCH_USERS',
             payload: users
           }
 }
 
-export function compareUsers(id1, id2){
-  const comparedusers = fetch(`https://rocky-dusk-25774.herokuapp.com/compare?id1=${id1}&id2=${id2}`).then(response => { return response.json()}).then(userPayLoad => { return userPayLoad})
-  return { type: 'COMPARE_USERS',
-            payload: comparedusers
-          }
+
+  export function compareUsers(id1, id2){
+
+    const comparedusers = fetch(compare_url + `${id1}&id2=${id2}`).then(response => { return response.json()}).then(userPayLoad => { return userPayLoad})
+    return { type: 'COMPARE_USERS',
+              payload: comparedusers
+            }
 }

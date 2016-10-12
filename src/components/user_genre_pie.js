@@ -6,7 +6,6 @@ import {Pie} from 'react-chartjs-2';
 class PieComponent extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state={
       term: "mid_term"
     }
