@@ -4,7 +4,7 @@ import Coverflow from 'react-coverflow';
 export default function MutualArtistCoverFlow(props) {
 
 var images = props.data.map( artist =>  {return (
-  <div style={{backgroundColor: 'gray', color: 'linen'}}>
+  <div key={artist.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
   <div className="row" >{artist.name}</div>
   <img height='100%' width='100%' src={`${artist.image}`}/>
   </div>

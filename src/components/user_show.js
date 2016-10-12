@@ -68,20 +68,24 @@ class UserShow extends React.Component {
         return <div> loading.....</div>
       } else {
         return(
-          <div>
+          <div className="">
             <h1>{this.props.user.username} Spotify Stats</h1>
-            <div className="btn-group-vertical" >
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a><br></br>
-              <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("CompareUsersComponent")}>Compare Users</a><br></br>
-          </div>
-          <div className= "componentRender">
-            {this.chooseComponent()}
-          </div>
-
+            <br></br>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="test btn-group-vertical col-sm-2">
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("CompareUsersComponent")}>Compare Users</a><br></br>
+                </div>
+                <div className= "componentRender col-sm-10">
+                  {this.chooseComponent()}
+                </div>
+              </div>
+            </div>
          </div>
         )
     }

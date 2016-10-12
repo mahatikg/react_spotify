@@ -12,17 +12,7 @@ logSpot(){
 }
 
   render() {
-    console.log(spotify_auth);
-    return (
-      <div className="App">
-        <div className="home">
-
-              <h1>STASTE</h1>
-                <h4><a onClick={this.logSpot} >Login with Spotify!</a></h4>
-                {this.props.children}
-        </div>
-      </div>
-    );
+    return (this.props.children);
   }
 }
 

@@ -14,7 +14,6 @@ class ArtistCoverFlow extends React.Component {
 
 
   clickHandler(term){
-    console.log(term)
     this.setState({
       term: term
     })
@@ -23,13 +22,11 @@ class ArtistCoverFlow extends React.Component {
   displayCoverFlow(){
     if (this.state.term=="short_term"){
       console.log(this.state)
-      debugger
-
       return (
         this.props.data.short_term.artists.map( artist =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={artist.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{artist.name}</div>
-         <img height='100%' width='100%' src={`${artist.image}`}/>
+         <img  height='100%' width='100%' src={`${artist.image}`}/>
          <div className="row">#{artist.rank}</div>
          </div>
        )
@@ -38,9 +35,9 @@ class ArtistCoverFlow extends React.Component {
     } if (this.state.term=="mid_term"){
       return (
         this.props.data.mid_term.artists.map( artist =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={artist.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{artist.name}</div>
-         <img height='100%' width='100%' src={`${artist.image}`}/>
+         <img  height='100%' width='100%' src={`${artist.image}`}/>
          <div className="row">#{artist.rank}</div>
          </div>
        )
@@ -49,7 +46,7 @@ class ArtistCoverFlow extends React.Component {
     } if (this.state.term=="long_term"){
       return (
         this.props.data.long_term.artists.map( artist =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={artist.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{artist.name}</div>
          <img height='100%' width='100%' src={`${artist.image}`}/>
          <div className="row">#{artist.rank}</div>
@@ -66,15 +63,16 @@ return(
   <div>
     <div className="btn-group btn-group-justified" role="group" aria-label="...">
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>As Long Ago As You Can Remember</button>
+          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>All Time</button>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Four Months Ago</button>
+          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Past Four Months</button>
         <br/></div>
         <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Four Weeks Ago</button>
+          <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Past Month</button>
         <br/></div>
     </div>
+    <br></br>
   <h3>Top Artists</h3>
   <br></br>
   <Coverflow

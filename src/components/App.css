@@ -1,6 +1,38 @@
 .App {
+  text-align: center ;
+}
+
+.rt-label {
   text-align: center;
 }
+
+.coverflow__container__1P-xE {
+  max-width: 100%;
+}
+
+
+.coverflow__container__1P-xE .row {
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+  text-align: left;
+}
+
+#home-text {
+  text-align: center;;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -19,14 +51,18 @@
 }
 
 #pie_size{
-  height: 500px;
+  height: 400px;
+}
+
+#bar_size{
+  height: 400px;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+/*
 .btn-group-vertical{
   float: left
 }
@@ -34,4 +70,4 @@
 .componentRender{
   width: 85%;
   float:right
-}
+}*/

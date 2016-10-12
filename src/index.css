@@ -15,3 +15,26 @@ body {
      background-repeat: no-repeat;
      background-size: 100% 100%
  }
+
+ .btn-primary {
+    color: #ffffff;
+    background-color: #845b6f;
+    border-color: #845b6f;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #5b509e;
+    border-color: #5b509e;
+}
+
+ .mid_div {
+
+   position : absolute;
+   width    : 200px;
+   height   : 200px;
+   left     : 50%;
+   top      : 60%;
+   margin-left : -100px; /* half of the width  */
+   margin-top  : -100px; /* half of the height */
+ }

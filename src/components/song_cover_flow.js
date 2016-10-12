@@ -13,7 +13,6 @@ class SongCoverFlow extends React.Component{
 
 
   clickHandler(term){
-    console.log(term)
     this.setState({
       term: term
     })
@@ -24,7 +23,7 @@ class SongCoverFlow extends React.Component{
 
       return (
         this.props.data.short_term.tracks.map( song =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={song.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{song.name}</div>
          <img height='100%' width='100%' src={`${song.image}`}/>
          <div className="row">#{song.rank}</div>
@@ -35,7 +34,7 @@ class SongCoverFlow extends React.Component{
     } if (this.state.term=="mid_term"){
       return (
         this.props.data.mid_term.tracks.map( song =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={song.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{song.name}</div>
          <img height='100%' width='100%' src={`${song.image}`}/>
          <div className="row">#{song.rank}</div>
@@ -46,7 +45,7 @@ class SongCoverFlow extends React.Component{
     } if (this.state.term=="long_term"){
       return (
         this.props.data.long_term.tracks.map( song =>  {return (
-         <div style={{backgroundColor: 'gray', color: 'linen'}}>
+         <div key={song.rank} style={{backgroundColor: 'gray', color: 'linen'}}>
          <div className="row" >{song.name}</div>
          <img height='100%' width='100%' src={`${song.image}`}/>
          <div className="row">#{song.rank}</div>
@@ -68,17 +67,18 @@ class SongCoverFlow extends React.Component{
       <div>
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>As Long Ago As You Can Remember</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>All Time</button>
             </div>
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Four Months Ago</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Past Four Months</button>
             <br/></div>
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Four Weeks Ago</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Past Month</button>
             <br/></div>
         </div>
-
-      <h3>Your Top Songs</h3>
+      <br></br>
+      <h3>Top Songs</h3>
+      <br></br>
       <Coverflow
           width={960}
           height={400}

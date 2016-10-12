@@ -2,16 +2,23 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './nav_bar';
 import {Link} from 'react-router';
-
+import {spotify_auth} from '../variables'
 class Home extends Component {
+
+  logSpot(){
+    console.log("test");
+    window.location.href=spotify_auth
+  }
+
   render() {
     return (
       <div className="App">
         <div className="home">
-
-              <h1>STASTE</h1>
-                <h4><a href="https://accounts.spotify.com/authorize/?client_id=031ed6ea90bd4727b184cd84219dd697&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5050%2Fcallback%2F&scope=user-top-read">Login with Spotify!</a></h4>
+          <div className="mid_div">
+              <h1 id="home-text">STASTE</h1>
+                <button type="button" name="button" onClick={this.logSpot} className="btn btn-primary">Login With Spotify</button>
                 {this.props.children}
+              </div>
         </div>
       </div>
     );

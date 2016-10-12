@@ -21,7 +21,7 @@ class BarComponent extends React.Component {
     labels: this.labels,
     datasets: [
       {
-        label: 'Spotify Popularity ratings of your Top 10 Artists',
+        label: 'Spotify Popularity Rating',
         backgroundColor: 'rgba(255,99,132,0.2)',
         borderColor: 'rgba(255,99,132,1)',
         borderWidth: 1,
@@ -41,7 +41,7 @@ class BarComponent extends React.Component {
       this.dataset = this.props.data.short_term.artists.slice(0, 10).map( artist => { return parseInt(artist.popularity)})
 
       return(
-        <div>
+        <div id="bar_size">
           <Bar data={this.data()} width={100} height={600} options={this.options}/>
         </div>
       )
@@ -50,7 +50,7 @@ class BarComponent extends React.Component {
       this.dataset = this.props.data.mid_term.artists.slice(0, 10).map( artist => { return parseInt(artist.popularity)})
 
       return(
-        <div>
+        <div id="bar_size">
           <Bar data={this.data()} width={100} height={600} options={this.options}/>
         </div>
       )
@@ -61,7 +61,7 @@ class BarComponent extends React.Component {
 
 
       return(
-        <div>
+        <div id="bar_size">
           <Bar data={this.data()} width={100} height={600} options={this.options}/>
         </div>
       )
@@ -80,17 +80,17 @@ render() {
     <div>
       <div className="btn-group btn-group-justified" role="group" aria-label="...">
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>As Long Ago As You Can Remember</button>
+            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>All Time</button>
           </div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Four Months Ago</button>
+            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Past Four Months</button>
           <br/></div>
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Four Weeks Ago</button>
+            <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Past Month</button>
           <br/></div>
       </div>
 
-    <br/> <br/> <h2>Top 10 {this.term} Artists</h2>
+  <br></br> <h2>Top Artist Spotify Popularity</h2>
     {this.displayBar()}
   </div>)
 }

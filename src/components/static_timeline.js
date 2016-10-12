@@ -38,12 +38,10 @@ class SpotifyTimelineComponent extends React.Component {
 }
 
   render() {
-    return ( <div> <br/><h2>TimeLine</h2>
-      <div>
-        <div>
+    return ( <div className='timeline'>
+
           <Timeline events={this.events}/>
-        </div>
-      </div>
+
     </div>)
   }
 

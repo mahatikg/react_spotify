@@ -102,13 +102,13 @@ render() {
     <div>
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>As Long Ago As You Can Remember</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("long_term")}>All Time</button>
             </div>
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Four Months Ago</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("mid_term")}>Past Four Months</button>
             <br/></div>
             <div className="btn-group" role="group">
-              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Four Weeks Ago</button>
+              <button type="button" className="btn btn-default" onClick={()=>this.clickHandler("short_term")}>Past Month</button>
             <br/></div>
         </div>
     <br/><h2>{this.term} Breakdown of Genres</h2>
