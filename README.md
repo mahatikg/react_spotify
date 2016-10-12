@@ -2,24 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-A React app to enable users to login via Spotify and renders their spotify data in interactive visuals 
+A React app to enable users to login via Spotify and renders their spotify data in interactive visuals
 created to better understand React/Redux and oauth flow. This app relies on a Rails5 API.  
 
-## Getting Started 
+## Getting Started
 1. You will want to clone down the Rails5 API that is required for this react app and get that running before starting the React app. You can get the Rails5 API and its instructions [here](https://github.com/mahatikg/rails-react-project).
 
 2. Once you have the rails side running, clone this repo and run ``` npm install ```
 
-3. run ``` npm install --save circular-json ```
-
-3. Run ``` npm start ``` and this should open the broswer with the app. 
+3. Run ``` npm start ``` and this should open the broswer with the app.
 
 
 
-Other Concerns: 
+
+Other Concerns:
 - make sure that the Rails server is not running on the same port as the react app
-- If you are already logged in with Spotify it will not take you to the spotify login page and instead immediately redirect 
-- due to various dependencies the node_modules are included in the repo
+- If you are already logged in with Spotify it will not take you to the spotify login page and instead immediately redirect
+- Ensure appropriate Spotify authentication and environment information is stored in your application.yml file of the rails API.
 
 
 Below you will find some information on how to perform common tasks.  
@@ -383,7 +382,7 @@ Inside `index.html`, you can use it like this:
 
 Only files inside the `public` folder will be accessible by `%PUBLIC_URL%` prefix. If you need to use a file from `src` or `node_modules`, you’ll have to copy it there to explicitly specify your intention to make this file a part of the build.
 
-When you run `npm run build`, Create React App will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL. 
+When you run `npm run build`, Create React App will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL.
 
 In JavaScript code, you can use `process.env.PUBLIC_URL` for similar purposes:
 
