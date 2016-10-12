@@ -7,7 +7,6 @@ import BarComponent from './artist_top10_chart'
 import ArtistCoverFlow from './artist_cover_flow'
 import SongCoverFlow from './song_cover_flow'
 import SpotifyTimelineComponent from './static_timeline'
-import Timeline from 'react-image-timeline';
 import UserCompare from './user_compare'
 
 
