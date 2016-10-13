@@ -65,7 +65,7 @@ class UserShow extends React.Component {
 
     render(){
       if (this.props.user.username == '') {
-        return <div> loading.....<img src="http://loading.io/loader/?use=eyJzaXplIjo5Nywic3BlZWQiOjEsImNiayI6IiNmZmZmZmYiLCJjMSI6IiMwMGIyZmYiLCJjMiI6IjEyIiwiYzMiOiI3IiwiYzQiOiIyMCIsImM1IjoiNSIsImM2IjoiMzAiLCJ0eXBlIjoiZGVmYXVsdCJ9"></img></div>
+        return <div> loading.....</div>
       } else {
         return(
           <div className="">

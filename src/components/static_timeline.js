@@ -39,18 +39,6 @@ class SpotifyTimelineComponent extends React.Component {
 
   render() {
     return ( <div className='timeline'>
-    <div className="btn-group btn-group-justified" role="group" aria-label="...">
-        <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default"></button>
-        </div>
-        <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default">Timeline</button>
-        <br/></div>
-        <div className="btn-group" role="group">
-          <button type="button" className="btn btn-default"></button>
-        <br/></div>
-      </div>
-
           <Timeline events={this.events}/>
 
     </div>)
