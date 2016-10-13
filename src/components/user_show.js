@@ -8,7 +8,7 @@ import ArtistCoverFlow from './artist_cover_flow'
 import SongCoverFlow from './song_cover_flow'
 import SpotifyTimelineComponent from './static_timeline'
 import UserCompare from './user_compare'
-
+var Spinner = require('react-spinkit');
 
 
 class UserShow extends React.Component {
@@ -65,7 +65,9 @@ class UserShow extends React.Component {
 
     render(){
       if (this.props.user.username == '') {
-        return <div> loading.....</div>
+        return <div>THE SPINNER SHOULD SHOW UP HERE
+        <Spinner spinnerName='wave'/>
+        </div>
       } else {
         return(
           <div className="">
