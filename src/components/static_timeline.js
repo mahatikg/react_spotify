@@ -4,6 +4,7 @@ import {Pie} from 'react-chartjs-2';
 import Timeline from './timeline/timeline';
 require('./timeline/timeline.css');
 
+
 class SpotifyTimelineComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +40,7 @@ class SpotifyTimelineComponent extends React.Component {
 
   render() {
     return ( <div className='timeline'>
+
           <Timeline events={this.events}/>
 
     </div>)
