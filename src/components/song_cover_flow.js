@@ -9,6 +9,7 @@ class SongCoverFlow extends React.Component{
       term: "mid_term"
     }
     this.displayCoverFlow= this.displayCoverFlow.bind(this)
+    this.logSpot = this.logSpot.bind(this)
   }
 
 
@@ -58,7 +59,10 @@ class SongCoverFlow extends React.Component{
 
 
 
-
+  logSpot(){
+    console.log("test");
+    window.location.href="https://accounts.spotify.com/authorize/?client_id=031ed6ea90bd4727b184cd84219dd697&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5050%2Ftopplay%2F&scope=playlist-modify-private%20user-top-read"
+  }
 
 
 
@@ -91,6 +95,10 @@ class SongCoverFlow extends React.Component{
           {this.displayCoverFlow()}
 
         </Coverflow>
+        <br></br>
+        <div>
+          <a href="#" className="btn btn-default" onClick={this.logSpot}>Create All Time Playlist</a><br></br>
+        </div>
         </div>
     )
   }

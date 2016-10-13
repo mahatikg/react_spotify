@@ -107,7 +107,7 @@ class UserCompare extends React.Component{
       <br></br>
       <h3>Available Users</h3>
         {this.props.users.map( user => { return (
-          <li key={user.id} onClick={()=>this.clickHandler(user.id)}>{user.username}</li>)})}
+          <li key={user.id} onClick={()=>this.clickHandler(user.id)}>{user.username} - {user.display_name}</li>)})}
         </div>
 
       )

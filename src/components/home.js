@@ -6,7 +6,6 @@ import {spotify_auth} from '../variables'
 class Home extends Component {
 
   logSpot(){
-    console.log("test");
     window.location.href=spotify_auth
   }
 
