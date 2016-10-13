@@ -19,6 +19,7 @@ class UserShow extends React.Component {
       selectedChart: "PieChart"
     }
   this.chooseComponent=this.chooseComponent.bind(this)
+  this.logSpot = this.logSpot.bind(this)
   }
 
   changeComponentOnClick(term){
@@ -63,6 +64,11 @@ class UserShow extends React.Component {
 
   }
 
+  logSpot(){
+    console.log("test");
+    window.location.href="https://accounts.spotify.com/authorize/?client_id=031ed6ea90bd4727b184cd84219dd697&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5050%2Ftopplay%2F&scope=playlist-modify-private%20user-top-read"
+  }
+
     render(){
       if (this.props.user.username == '') {
         return <div> loading.....</div>
@@ -80,6 +86,7 @@ class UserShow extends React.Component {
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("CompareUsersComponent")}>Compare Users</a><br></br>
+                  <a href="#" className="btn btn-default" onClick={this.logSpot}>Create Top Playlist</a><br></br>
                 </div>
                 <div className= "componentRender col-sm-10">
                   {this.chooseComponent()}

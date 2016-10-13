@@ -1,6 +1,6 @@
 import React from 'react'
 import Coverflow from 'react-coverflow';
-
+import UserPlaylist from './user_playlist'
 
 class ArtistCoverFlow extends React.Component {
 
@@ -39,6 +39,7 @@ class ArtistCoverFlow extends React.Component {
          <div className="row" >{artist.name}</div>
          <img  height='100%' width='100%' src={`${artist.image}`}/>
          <div className="row">#{artist.rank}</div>
+
          </div>
        )
       })
