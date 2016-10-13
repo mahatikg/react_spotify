@@ -65,15 +65,18 @@ class UserShow extends React.Component {
 
     render(){
       if (this.props.user.username == '') {
-        return <div> loading.....</div>
+        return <div> loading.....<img src="http://loading.io/loader/?use=eyJzaXplIjo5Nywic3BlZWQiOjEsImNiayI6IiNmZmZmZmYiLCJjMSI6IiMwMGIyZmYiLCJjMiI6IjEyIiwiYzMiOiI3IiwiYzQiOiIyMCIsImM1IjoiNSIsImM2IjoiMzAiLCJ0eXBlIjoiZGVmYXVsdCJ9"></img></div>
       } else {
         return(
           <div className="">
-            <h1>{this.props.user.display_name} | Spotify Stats</h1>
             <br></br>
+            <h1>&nbsp;{this.props.user.display_name} | Spotify Stats</h1>
+            <br></br>
+
             <div className="container-fluid">
               <div className="row">
                 <div className="test btn-group-vertical col-sm-2">
+                  <br></br><br></br><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>

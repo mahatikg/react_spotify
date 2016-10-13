@@ -9,9 +9,7 @@ import Autosuggest from 'react-autosuggest';
 
 
 const renderSuggestion = suggestion => (
-<div>
-  {suggestion.username}
-</div>
+  <a href="#">{suggestion.username}</a>
 );
 
 class UserCompare extends React.Component{
@@ -91,6 +89,7 @@ class UserCompare extends React.Component{
       return(
         <div>
          <MutualArtistCoverFlow data={this.props.comparedUsers}/>
+         <br></br>
          <button className="btn btn-default" onClick={this.clickHandler}>Back to list</button>
         </div>
       )
