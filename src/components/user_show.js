@@ -75,18 +75,21 @@ class UserShow extends React.Component {
       } else {
         return(
           <div className="">
-            <h1>{this.props.user.display_name} | Spotify Stats</h1>
             <br></br>
+            <h1>&nbsp;{this.props.user.display_name} | Spotify Stats</h1>
+            <br></br>
+
             <div className="container-fluid">
               <div className="row">
                 <div className="test btn-group-vertical col-sm-2">
+                  <br></br><br></br><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("ArtistCoverFlow")}>Top 50 Artists</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("SongCoverFlow")}>Top Songs</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("PieChart")}>Genre Breakdown</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("BarComponent")}>Artist Popularity</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("Timeline")}>Time Line</a><br></br>
                   <a href="#" className="btn btn-default" onClick={()=>this.changeComponentOnClick("CompareUsersComponent")}>Compare Users</a><br></br>
-                  <a href="#" className="btn btn-default" onClick={this.logSpot}>Create Top Playlist</a><br></br>
+              
                 </div>
                 <div className= "componentRender col-sm-10">
                   {this.chooseComponent()}
