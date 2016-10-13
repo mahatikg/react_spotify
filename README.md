@@ -6,6 +6,7 @@ A React app to enable users to login via Spotify and renders their spotify data 
 created to better understand React/Redux and oauth flow. This app relies on a Rails5 API.  
 
 ## Getting Started
+
 1. You will want to clone down the Rails5 API that is required for this react app and get that running before starting the React app. You can get the Rails5 API and its instructions [here](https://github.com/mahatikg/rails-react-project).
 
 2. Once you have the rails side running, clone this repo and run ``` npm install ```

@@ -75,7 +75,7 @@ class UserShow extends React.Component {
       } else {
         return(
           <div className="">
-            <h1>{this.props.user.username} Spotify Stats</h1>
+            <h1>{this.props.user.display_name} | Spotify Stats</h1>
             <br></br>
             <div className="container-fluid">
               <div className="row">
@@ -101,6 +101,7 @@ class UserShow extends React.Component {
 
 
 function mapStateToProps(state, ownProps) {
+  debugger
   if (state.users.length > 0) {
     const user = state.users.find((user) => {return user.id == ownProps.params.id})
     return {user: user, users: state.users, ownProps: ownProps}
