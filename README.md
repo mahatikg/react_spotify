@@ -14,9 +14,7 @@ created to better understand React/Redux and oauth flow. This app relies on a Ra
 3. Run ``` npm start ``` and this should open the broswer with the app.
 
 
-
-
-Other Concerns:
+### Other Concerns:
 - make sure that the Rails server is not running on the same port as the react app
 - If you are already logged in with Spotify it will not take you to the spotify login page and instead immediately redirect
 - Ensure appropriate Spotify authentication and environment information is stored in your application.yml file of the rails API.
