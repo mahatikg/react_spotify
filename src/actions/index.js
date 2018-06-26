@@ -8,7 +8,6 @@ export function fetchUsers() {
           }
 }
 
-
   export function compareUsers(id1, id2){
 
     const comparedusers = fetch(compare_url + `${id1}&id2=${id2}`).then(response => { return response.json()}).then(userPayLoad => { return userPayLoad})
